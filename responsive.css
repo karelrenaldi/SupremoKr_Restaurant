@@ -1,0 +1,417 @@
+:root {
+  --pink: #f73859;
+  --black: #222831;
+}
+
+body {
+  font-size: 13px;
+  background-image: linear-gradient(
+      135deg,
+      rgba(90, 90, 90, 0.33) 0%,
+      rgba(90, 90, 90, 0.33) 14.286%,
+      rgba(77, 77, 77, 0.33) 14.286%,
+      rgba(77, 77, 77, 0.33) 28.572%,
+      rgba(64, 64, 64, 0.33) 28.572%,
+      rgba(64, 64, 64, 0.33) 42.858%,
+      rgba(51, 51, 51, 0.33) 42.858%,
+      rgba(51, 51, 51, 0.33) 57.144%,
+      rgba(38, 38, 38, 0.33) 57.144%,
+      rgba(38, 38, 38, 0.33) 71.43%,
+      rgba(25, 25, 25, 0.33) 71.43%,
+      rgba(25, 25, 25, 0.33) 85.716%,
+      rgba(12, 12, 12, 0.33) 85.716%,
+      rgba(12, 12, 12, 0.33) 100.002%
+    ),
+    linear-gradient(
+      45deg,
+      rgb(13, 13, 13) 0%,
+      rgb(13, 13, 13) 14.286%,
+      rgb(21, 21, 21) 14.286%,
+      rgb(21, 21, 21) 28.572%,
+      rgb(30, 30, 30) 28.572%,
+      rgb(30, 30, 30) 42.858%,
+      rgb(38, 38, 38) 42.858%,
+      rgb(38, 38, 38) 57.144%,
+      rgb(46, 46, 46) 57.144%,
+      rgb(46, 46, 46) 71.43%,
+      rgb(55, 55, 55) 71.43%,
+      rgb(55, 55, 55) 85.716%,
+      rgb(63, 63, 63) 85.716%,
+      rgb(63, 63, 63) 100.002%
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--black);
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 2.1em;
+}
+
+/* Scrollbar Support on Chrome and IE*/
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f7385950;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f73859;
+}
+
+button {
+  background: var(--pink);
+  border: 0;
+  padding: 10px 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.top {
+  display: grid;
+  grid-template-areas:
+    "hero hero cta1"
+    "hero hero cta2";
+  grid-auto-rows: 32vh;
+  grid-gap: 1.5em;
+}
+
+.top > *,
+#menu-list a,
+.about,
+.feature,
+.gallery img {
+  border: 2px solid black;
+}
+
+.hero,
+.cta {
+  border-radius: 8px;
+}
+
+.hero {
+  grid-area: hero;
+  background: url(./images/taco.jpg);
+  background-size: cover;
+  background-position: bottom right;
+  padding: 1em;
+  display: grid;
+  justify-items: start;
+  align-content: center;
+}
+
+.hero > * {
+  border-radius: 5px;
+  background-color: var(--pink);
+  color: var(--black);
+}
+
+.hero h1 {
+  padding: 0.3em;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+
+.hero p {
+  padding: 0.5em;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.cta {
+  background: var(--pink);
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.cta > * {
+  margin: 0;
+  color: var(--black);
+  letter-spacing: 1px;
+}
+
+.cta .price {
+  font-size: 5rem;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+.cta1 {
+  grid-area: cta1;
+}
+
+.cta2 {
+  grid-area: cta2;
+}
+
+/* MENU */
+.menu ul {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  list-style: none;
+  padding: 0;
+}
+
+ul a {
+  color: var(--black);
+  background: var(--pink);
+  display: block;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  border-radius: 6px;
+  font-size: 1.5rem;
+}
+
+[aria-controls="menu-list"] {
+  display: none;
+}
+
+/* Features */
+section.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+  grid-gap: 0.6em;
+}
+
+.feature {
+  background-color: blanchedalmond;
+  padding: 1.5em;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.feature .icon {
+  font-size: 5rem;
+  display: inline-block;
+  margin-bottom: 0.4em;
+}
+
+.feature h3 {
+  font-size: 3rem;
+  letter-spacing: 0.5px;
+}
+
+.feature p {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+}
+
+/* About */
+section.about {
+  background-color: blanchedalmond;
+  display: grid;
+  grid-gap: 1.2em;
+  grid-template-columns: auto 1fr;
+  border-radius: 8px;
+  padding: 1.6em 1.2em;
+  align-items: center;
+}
+
+.about h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+  letter-spacing: 1px;
+}
+
+.about p {
+  letter-spacing: 0.3px;
+  line-height: 0.7;
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+
+.about button {
+  font-size: 1.375rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 0.7em;
+  padding: 0.975em 1.2em;
+  border-radius: 5px;
+}
+
+section.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1em;
+}
+
+.gallery img {
+  border-radius: 5px;
+  width: 100%;
+  height: 17em;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gallery h2 {
+  grid-column: 1/-1;
+  color: wheat;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  grid-gap: 1em;
+}
+
+.gallery h2::before,
+.gallery h2::after {
+  display: block;
+  height: 1vh;
+  content: "";
+  border-radius: 1px;
+}
+
+.gallery h2::before {
+  background: linear-gradient(to left, var(--pink), transparent);
+}
+
+.gallery h2::after {
+  background: linear-gradient(to right, var(--pink), transparent);
+}
+
+/* Media Query */
+@media (max-width: 1000px) {
+  html {
+    font-size: 9px;
+  }
+
+  .menu {
+    order: -1;
+    perspective: 30em;
+  }
+
+  .hero {
+    align-content: start;
+  }
+
+  section.about {
+    grid-template-columns: 1fr;
+  }
+
+  .about__details p {
+    margin: 0.475em;
+    line-height: 1;
+  }
+
+  .about img {
+    justify-self: center;
+  }
+
+  .about .about__details {
+    display: grid;
+    justify-items: center;
+  }
+
+  [aria-controls="menu-list"] {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1em;
+  }
+
+  [aria-controls="menu-list"] > *,
+  [aria-controls="menu-list"] {
+    outline: none;
+  }
+
+  .menu ul {
+    max-height: 0;
+    transform: rotateX(90deg);
+    transition: all 0.5s;
+    overflow: hidden;
+  }
+
+  [aria-expanded="true"] ~ ul {
+    display: grid;
+    max-height: 30vh;
+    transform: rotate(0);
+  }
+
+  [aria-expanded="true"] .open {
+    display: none;
+  }
+
+  [aria-expanded="true"] .close {
+    display: inline-block;
+  }
+
+  [aria-expanded="false"] .close {
+    display: none;
+  }
+
+  [aria-expanded="false"] .open {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero {
+    align-content: start;
+    font-size: 1.4rem;
+  }
+  .top {
+    grid-template-areas:
+      "hero hero"
+      "cta1 cta2";
+    grid-template-rows: 50vh;
+  }
+}
+
+@media (max-width: 703px) {
+  .top {
+    grid-template-areas:
+      "hero"
+      "cta1"
+      "cta2";
+  }
+  .cta1,
+  .cta2 {
+    justify-self: center;
+    padding: 0 4em;
+  }
+}
+
+@media (max-width: 455px) {
+  .hero {
+    background: url(./images/krisztian-tabori-ZQf4jzkpz1k-unsplash.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 1.2rem;
+  }
+  .feature p {
+    font-size: 1.3rem;
+  }
+
+  [aria-expanded="true"] ~ ul {
+    max-height: 45vh;
+  }
+}
+
+@media (max-width: 370px) {
+  .hero {
+    background-position: 0 60%;
+    font-size: 1.175rem;
+  }
+}
